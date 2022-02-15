@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- 
+    lang=" " tells the browser 
+    when loading the document 
+    that this page is in which language -->
+<html lang="en">
+  <head>
+    <!-- The text that will be displayed in Browser tab -->
+    <title>Home</title>
+
+    <!-- Use of meta elements -->
+    
+    <!-- 1. Character encoding -->
+    <meta charset="utf-8" />
+    <!-- 2. Some tags for improving Search Engine Optimisation -->
+    <meta name="description" content="Lecture 3 Basics of HTML" />
+    <meta name="keywords" content="HTML, Fundamentals" />
+    <meta name="author" content="Mohsin" />
+    <!-- 3. Setting up document width in accordance with device-width
+        and also initial zooming when the page is loaded
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- 4. Using Link element to connect an external css stylesheet / file -->
+    <link rel="stylesheet" href="./css/master.css" />
+  </head>
+  <body>
+
+    <!-- 1. Using Nav and list elements -->
+    <nav>
+      <ol>
+          <!-- 1B. Use of different href strategies -->
+          <!-- Checkout their effects -->
+        <li><a href="#">Home</a></li>
+        <li><a href="./order.html">Order</a></li>
+        <li><a href="#main_section">Scroll to Main Section</a></li>
+      </ol>
+    </nav>
+    <!-- 2. Using Sections and Divs -->
+    <section id="main_section">
+      <div class="pic_div"></div>
+      <div id="about_div">
+        <article id="ab_me"></article>
+      </div>
+      <button>Let's See</button>
+      <span id="refCh"></span>
+    </section>
+    <section>
+      <div>
+
+        <!-- 3. Using p, pre, blockquote, code, and button -->
+        <p>Let us get to know textual tags in HTML</p>
+        <hr />
+        adas
+        <pre>
+          x + 5 = 6
+          y + 7 = 20
+        </pre>
+        <blockquote>Live and Let others live</blockquote>
+        <code>
+          <pre>
+            var = 10;
+            const PI = 3.141;
+            for i in range(0, len(x)):
+              print(i)
+          </pre>
+        </code>
+        <p>
+          This is an example of <span><strong>Span</strong></span>
+        </p>
+        <button >Testing Button</button>
+        <button >Reset Button</button>
+        <p id="output_p"></p>
+      </div>
+    </section>
+    <footer>
+      <p>Copyright © FCSE | GIKI | 2022</p>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Linking externel css -->
+    <link rel="stylesheet" href="./css/secondary.css">
+    <!-- Applying CSS using style element -->
+    <style>
+        #first {
+            color: blue
+        }
+
+        h1 {
+            text-align: left;
+        }
+
+        .fw-italics {
+            font-style: italic;
+        }
+
+        /* Checkout line_number 85-130 */
+        .wrapper+h1 {
+            background-color: brown;
+        }
+
+        /* Checkout line_number 134-144 */
+        .another h1 {
+            background-color: gray;
+        }
+
+        /* Checkout line_number 148-161 */
+        .another-div>h1 {
+            background-color: cadetblue;
+        }
+
+        .wrapper>div{
+            display: inline-block;
+            padding: 4px;
+            margin: 1px;
+            /* Using relative height and width for the Div*/
+            height: 4em;    
+            width: 4em;
+            background-color: rgb(30, 30, 30);
+            color:beige;
+        }
+        .wrapper>div>h1{
+            font-weight: lighter;
+            text-align: center;
+        }
+        /* Using pseudo class selector for selecting every even child Div */ 
+        .wrapper>div:nth-child(even){
+            /* Here we reversed the foreground and background colors*/
+            background-color: beige;
+            color:  rgb(30, 30, 30);
+        }
+    </style>
+
+</head>
+
+<body>
+    <section>
+        <p>Hello!</p>
+        <div>
+            <p class="fw-italics">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit modi beatae pariatur illum sint assumenda
+                incidunt quae facere dolorem ad. Unde quo temporibus cumque ratione nobis, hic eveniet illum vitae.
+            </p>
+            <p class="fw-italics">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, necessitatibus vero. Ullam eos illum
+                in, consequuntur minus quo porro fugiat similique animi, aut deserunt magni delectus optio ducimus est
+                numquam?
+            </p>
+            <!-- Inline styling -->
+            <p style="font-weight: lighter">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias magni eligendi saepe quis aliquam
+                accusamus ullam! Natus facilis, ipsum doloremque quibusdam in repellat officiis magni, at expedita ut,
+                voluptatum atque.
+            </p>
+        </div>
+    </section>
+
+    <!-- Zen Coding Style -->
+    <!-- section#exp>div.wrapper>div+div+div+div+div+div+div -->
+    <section id="exp">
+        <div class="wrapper">
+            <div>
+                <h1>
+                    1
+                </h1>
+            </div>
+            <div>
+                <h1>
+                    2
+                </h1>
+            </div>
+            <div>
+                <h1>
+                    3
+                </h1>
+            </div>
+            <div>
+                <h1>
+                    4
+                </h1>
+            </div>
+            <div>
+                <h1>
+                    5
+                </h1>
+            </div>
+            <div>
+                <h1>
+                    6
+                </h1>
+            </div>
+            <div>
+                <h1>
+                    7
+                </h1>
+            </div>
+        </div>
+        <h1>
+            To Show the usage of element + element {}
+        </h1>
+        <h2>
+            To buffer
+        </h2>
+        <h1>
+            To Show the usage of element + element {}
+        </h1>
+    </section>
+
+    <section>
+        <div class="another">
+            <h1>
+                To Show the usage of element element {}
+            </h1>
+            <h2>
+                To buffer
+            </h2>
+            <h1>
+                To Show the usage of element element {}
+            </h1>
+        </div>
+    </section>
+
+    <section>
+        <div class="another-div">
+            <h1>
+                To Show the usage of element > element {}
+            </h1>
+            <div>
+                <h2>
+                    To buffer
+                </h2>
+                <h1>
+                    To Show the usage of element > element {}
+                </h1>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="exp">
+        <!-- To show usage of block display-->
+        <div class="wrapper-beta">
+            <div>
+                <h1>
+                    1
+                </h1>
+            </div>
+            <div>
+                <h1>
+                    2
+                </h1>
+            </div>
+            <div>
+                <h1>
+                    3
+                </h1>
+            </div>
+            <div>
+                <h1>
+                    4
+                </h1>
+            </div>
+            <div>
+                <h1>
+                    5
+                </h1>
+            </div>
+            <div>
+                <h1>
+                    6
+                </h1>
+            </div>
+            <div>
+                <h1>
+                    7
+                </h1>
+            </div>
+        </div>
+       
+    </section>
+
+    <form action="#">
+        <input type="text" name="" id="">
+        <input type="checkbox" name="" id="">
+        <input type="color" name="" id="">
+        <button type="submit">Post Data</button>
+    </form>
+    <style>
+        .wrapper-beta>div{
+            display: block;
+            padding: 4px;
+            margin: 4px;
+            /* Using relative height and width for the Div*/
+            height: 4em;    
+            width: 4em;
+            background-color: rgb(30, 30, 30);
+            color:beige;
+        }
+        .wrapper-beta>div>h1{
+            font-weight: lighter;
+            text-align: center;
+        }
+        /* Using pseudo class selector for selecting every even child Div */ 
+        .wrapper-beta>div:nth-child(even){
+            /* Here we reversed the foreground and background colors*/
+            background-color: beige;
+            color:  rgb(30, 30, 30);
+        }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+li, a {
+  display: inline;
+  padding: 5px;
+}
+#main_section {
+  display: block;
+  width: 100%;
+}
+.pic_div {
+  display: inline-block;
+  width: 30%;
+  height: 200px;
+  background-color: blue;
+}
+div > img {
+  display: none;
+  max-width: 90%;
+  max-height: 100%;
+}
+
+#about_div {
+  display: inline-block;
+  width: 68%;
+  height: 200px;
+  background-color: yellow;
+}
+footer {
+  display: block;
+  width: 98.5%;
+  height: 30px;
+  background: lightgray;
+}
+footer > p {
+  text-align: center;
+  color: blue;
+  padding: 5px;
+}

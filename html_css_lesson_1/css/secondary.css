@@ -1,0 +1,7 @@
+h1 {
+    text-align: center
+}
+
+section > div > p.fw-italics {
+    font-weight: bold;
+}
