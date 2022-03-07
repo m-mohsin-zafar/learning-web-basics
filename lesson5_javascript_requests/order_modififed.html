@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Requests</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body class="bg-light">
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Learning HTTP Requests</h1>
+            <p>We shall create forms and then send HTTP Requests using three different APIs including XMLHttp, fetch,
+                and Axios</p>
+            <a class="btn btn-primary btn-lg" href="#pizzaorderform" role="button">Let's fill the form!</a>
+        </div>
+    </div>
+
+    <div class="container" id='getdemo'>
+        <button class="btn btn-primary btn-sm w-25" id='getbtn'>Get Demo</button>
+        <pre id='preformattedtext'>
+
+        </pre>
+    </div>
+    <div class="container" id='postdemo'>
+        <button class="btn btn-primary btn-sm w-25" id='postbtn'>Post Demo</button>
+        <pre id='preformattedtext2'>
+
+        </pre>
+    </div>
+
+    <div class="container">
+        <form id="pizzaorderform" method="GET">
+            <div class="form-group">
+                <p class="h4">Place your Order</p>
+                <hr>
+            </div>
+            <div class="form-group shadow-sm">
+                <fieldset id="pizzaSize" class="border p-2">
+                    <legend class="w-auto h6 text-muted">Pizza Size</legend>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="pzsizeradios" id="pzSmall"
+                            value="small" checked>
+                        <label class="form-check-label" for="pzSmall">
+                            Small - 10"
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="pzsizeradios" id="pzMedium"
+                            value="medium">
+                        <label class="form-check-label" for="pzMedium">
+                            Medium - 13"
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="pzsizeradios" id="pzLarge"
+                            value="large">
+                        <label class="form-check-label" for="pzLarge">
+                            Large - 16"
+                        </label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="form-group shadow-sm">
+                <fieldset id="pizzaToppings" class="border p-2">
+                    <legend class="w-auto h6 text-muted">Pizza Toppings</legend>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="pztoppings" id="pzTopBacon"
+                            value="bacon" checked>
+                        <label class="form-check-label" for="pzTopBacon">
+                            Bacon
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="pztoppings" id="pzTopExCheese"
+                            value="excheese">
+                        <label class="form-check-label" for="pzTopExCheese">
+                            Extra Cheese
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="pztoppings" id="pzTopOnion"
+                            value="onion">
+                        <label class="form-check-label" for="pzTopOnion">
+                            Onions
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="pztoppings" id="pzTopMushroom"
+                            value="mushroom">
+                        <label class="form-check-label" for="pzTopMushroom">
+                            Mushrooms
+                        </label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="form-group shadow-sm p-2">
+                <label class="h6 text-muted" for="pizzacrust">Crust</label>
+                <select class="custom-select" name="pizzacrust" id="pizzacrust">
+                    <option value="c1">Normal</option>
+                    <option value="c2" selected>Chicago Deep Dish (+ $2)</option>
+                    <option value="c3">New York Thin</option>
+                </select>
+            </div>
+
+            <div class="form-group shadow-sm p-2">
+                <label class="h6 text-muted" for="comments">Comments</label>
+                <textarea class="form-control" name="comments" id="comments" cols="50" rows="5" maxlength="300"></textarea>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+                <p class="h4">Delivery Details</p>
+                <hr>
+            </div>
+
+            <div class="form-row">
+                <div class="col">
+                    <label for="fname">First Name</label>
+                    <input type="text" class="form-control" id="fname" placeholder="First name">
+                </div>
+                <div class="col">
+                    <label for="lname">Last Name</label>
+                    <input type="text" class="form-control" id="lname" placeholder="Last name">
+                </div>
+            </div>
+            <div class="form-group mt-2">
+                <label for="inputAddress">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">Address 2</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputState">State</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>Choose...</option>
+                        <option value='punjab'>Punjab</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputZip">Zip</label>
+                    <input type="text" class="form-control" id="inputZip">
+                </div>
+            </div>
+        </form>
+        <div class="mt-3 form-inline">
+            <button class="btn btn-primary btn-sm w-25" id='subformbtn'>Get Confirmation</button>
+            <button class="btn btn-danger btn-sm w-25" type="reset" value="">Reset Values</button>
+        </div>
+    </div>
+
+
+    <!-- External JavaScript Files -->
+    <script type="module" src="./js/main.js"></script>
+    <!-- <script src="./js/fetch_api.js"></script> -->
+    <!-- <script src="./js/axios_api.js"></script> -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
