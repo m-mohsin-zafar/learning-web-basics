@@ -1,0 +1,40 @@
+A website for showcase of your FYP
+----------------------------------
+Navigation
+div
+    Carousel
+        Title
+        Images
+        Short Description
+div
+    div.About
+        h1
+        p
+
+div
+    div.imgs
+        card
+            imgs as thumbnails
+            short text
+div
+    div.tech
+        icons (fontawesome)
+div
+    [optional] div.timeline 
+    -- |
+       | --
+    -- |
+       | --
+div
+    div.Team
+    [circular] [right side description]
+
+div
+    div.Contact Us [forms]
+
+div
+    div.footer
+        Copyrights
+        social media links [icons]
+        etc.
+

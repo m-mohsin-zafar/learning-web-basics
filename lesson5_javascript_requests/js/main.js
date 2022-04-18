@@ -45,6 +45,7 @@ function getData() {
 }
 
 function sendData(param) {
+    debugger;
     sendHttpRequest('POST', 'https://reqres.in/api/register', {
             email: 'eve.holt@reqres.in'
             // password: 'pistol2'

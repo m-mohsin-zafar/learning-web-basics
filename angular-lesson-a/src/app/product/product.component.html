@@ -1,0 +1,92 @@
+<!--
+  *ngFor is an Angular Directive that is helping to traverse over an array of products
+  For each product html template from line # 5 to end shall repeat.
+ -->
+<div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let product of products">
+  <div class="card shadow p-1 h-100">
+    <!-- [src] is an example of property binding    -->
+    <img class="card-img-top img-thumbnail" [src]="product.image" alt="Card image cap">
+    <div class="card-body">
+      <div class="row title-row">
+        <!--
+          1. There are some properties that are exclusive to DOM and thus we can only refer to them
+          by using "attr." as prefix to them.
+          2. {{product.title}} is an example of interpolation
+          3. "summary" is a custom pipe. refer to pipes/summary.pipes.ts
+          -->
+        <p class="card-title fw-bold" [attr.title]="product.title">{{product.title | summary}}</p>
+      </div>
+      <div class="row mt-1">
+        <div class="col-10">
+          <p>{{product.price | currency}}</p>
+        </div>
+        <div class="col-2">
+          <!--
+            1. [ngClass] is another directive which allows us to bind classes with some expression.
+              Another way to achieve the same functionality could have been like this:
+                <i class="bi"
+                  [class.bi-heart-fill]="product.bookmarked"
+                  [class.bi-hear]="!product.bookmarked"
+                  (click)="onBookmark(product)"
+                ></i>
+              Observe lines 28-29, there is a repetition and we can avoid it using the syntax used below.
+            2. (click) is an Angular click event where we are binding onBookmark method to it,
+              and passing the current product to it as an argument.
+            -->
+          <i
+            [ngClass]="{'bi bi-heart-fill': product.bookmarked, 'bi bi-heart': !product.bookmarked }"
+            (click)="onBookmark(product)">
+          </i>
+        </div>
+        <div class="col-6 text-muted">
+          <p>Rating: {{product.rating.rate}}</p>
+        </div>
+        <div class="col-6 text-muted text-end">
+          <p>Votes: {{product.rating.count}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer bg-transparent">
+      <div class="form-group">
+        <div class="form-floating mb-3">
+          <!--
+            1. (keyup.enter) is an example of event filtering. The main event here is "keyup"
+              "enter" is sub-event for "keyup" event.
+
+            2. [()] represents two way binding. For this to work we are using "ngModel" directive.
+              Before using "ngModel" this must be made available by importing "FormModule" from @angular/forms module.
+
+              A naive way to achieve two way binding could have been as follows;
+                <
+                  input type="text"
+                  #bid
+                  class="form-control"
+                  name="bid"
+                  id="bid"
+                  [value]="product.bid"
+                  (keyup.enter)="product.bid = bid.value; onBid(product)"
+                >
+                In this example, "#bid" is called template variable which represents $event.target.value.
+                In other words, #bid represents the input element.
+                Observe line 66, here we are using property binding i.e. from component to template
+                Observe line 67, here we have provided an expression in response to the event.
+                  product.bid=bid.value is explicitly changing the value of bid in the component.
+                  -->
+          <input type="text"
+                 class="form-control"
+                 name="bid"
+                 id="bid"
+                 [(ngModel)]="product.bid"
+                 (keyup.enter)="onBid(product)"
+          >
+          <label for="bid">Place your bid</label>
+        </div>
+      </div>
+      <p class="text-muted">You are about to place a bid of: {{product.bid | currency}}</p>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="button" name="proceed" id="proceed" class="btn btn-outline-primary btn-sm btn-block">Proceed</button>
+      </div>
+    </div>
+  </div>
+</div>
+

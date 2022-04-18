@@ -37,7 +37,7 @@
     </div>
 
     <div class="container">
-        <form id="pizzaorderform" method="GET">
+        <form id="pizzaorderform">
             <div class="form-group">
                 <p class="h4">Place your Order</p>
                 <hr>
@@ -159,18 +159,19 @@
                     <input type="text" class="form-control" id="inputZip">
                 </div>
             </div>
+            <div class="mt-3 form-inline">
+                <button class="btn btn-primary btn-sm w-25" type="submit" id='subformbtn'>Get Confirmation</button>
+                <button class="btn btn-danger btn-sm w-25" type="reset" value="">Reset Values</button>
+            </div>
         </form>
-        <div class="mt-3 form-inline">
-            <button class="btn btn-primary btn-sm w-25" id='subformbtn'>Get Confirmation</button>
-            <button class="btn btn-danger btn-sm w-25" type="reset" value="">Reset Values</button>
-        </div>
+        
     </div>
 
 
     <!-- External JavaScript Files -->
-    <script type="module" src="./js/main.js"></script>
+    <!-- <script type="module" src="./js/main.js"></script> -->
     <!-- <script src="./js/fetch_api.js"></script> -->
-    <!-- <script src="./js/axios_api.js"></script> -->
+    <script src="./js/axios_api.js"></script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
