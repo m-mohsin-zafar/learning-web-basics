@@ -1,0 +1,12 @@
+/*.card {*/
+/*  width: 10rem;*/
+/*}*/
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: contain;
+}
+
+.title-row {
+  height: 3em;
+}
