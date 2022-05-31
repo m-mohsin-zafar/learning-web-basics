@@ -1,0 +1,35 @@
+<div class="row bg-info bg-opacity-50 d-flex justify-content-md-center align-items-center vh-100 overflow-auto">
+  <div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="card border-primary shadow">
+      <div class="card-body">
+        <h4 class="card-title text-center fw-light">Register</h4>
+        <hr>
+        <form [formGroup]="signupForm" (ngSubmit)="signup()" class="row g-3">
+          <div>
+              <div class="col-md-12">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input formControlName="name" type="text" class="form-control" id="fullName" name="fullName">
+              </div>
+              <div class="col-md-12">
+                <label for="email" class="form-label">Email</label>
+                <input formControlName="email" type="email" class="form-control" id="email" name="email">
+              </div>
+            <div class="col-md-12">
+              <label for="password" class="form-label">Password</label>
+              <input formControlName="password" type="password" class="form-control" id="password" name="password">
+            </div>
+            <div class="col-md-12">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input formControlName="confirmPassword" type="password" class="form-control" id="confirmPassword" name="confirmPassword">
+            </div>
+
+            <div class="d-grid gap-2 col-6 mx-auto mt-3 align-content-center">
+              <button class="btn btn-outline-primary" type="submit">Register</button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

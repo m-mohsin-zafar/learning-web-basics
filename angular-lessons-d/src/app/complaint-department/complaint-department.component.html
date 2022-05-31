@@ -1,0 +1,3 @@
+<ul *ngFor="let c of cDepartments">
+  <li><a [routerLink]="['/complaintDept', c.deptName, c._id]" [queryParams]="{detailLevel: 'tiny'}">{{c.deptName}}</a></li>
+</ul>

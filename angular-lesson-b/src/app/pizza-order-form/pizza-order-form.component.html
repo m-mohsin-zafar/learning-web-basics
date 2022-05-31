@@ -1,0 +1,32 @@
+<div class="row bg-info bg-opacity-50 d-flex justify-content-md-center align-items-center vh-100 overflow-auto">
+  <div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="card border-primary shadow">
+      <div class="card-body">
+        <h4 class="card-title text-center fw-light">Register</h4>
+        <hr>
+        <form [formGroup]="orderForm" (ngSubmit)="placeOrder()" class="row g-3">
+          <div>
+            <div formGroupName="contactDetails">
+              <div class="col-md-4">
+                <label for="firstName" class="form-label">First name</label>
+                <input formControlName="firstName" type="text" class="form-control" id="firstName" name="firstName">
+              </div>
+              <div class="col-md-4">
+                <label for="lastName" class="form-label">Last name</label>
+                <input formControlName="lastName" type="text" class="form-control" id="lastName" name="lastName">
+              </div>
+            </div>
+
+
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Submit form</button>
+            </div>
+            <div>
+              <p>{{this.orderForm.value | json}}</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

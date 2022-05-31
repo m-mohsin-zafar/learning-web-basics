@@ -1,0 +1,104 @@
+<div class="row bg-info bg-opacity-50 d-flex justify-content-md-center align-items-center vh-100 overflow-auto">
+  <div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="card border-primary shadow">
+      <div class="card-body">
+        <h4 class="card-title text-center fw-light">Register</h4>
+        <hr>
+        <form #registrationForm="ngForm" (ngSubmit)="register(registrationForm)" class="row g-3" novalidate>
+          <div ngModelGroup="name">
+            <div class="col-md-4">
+              <label for="firstName" class="form-label">First name</label>
+              <input ngModel #firstName="ngModel" (change)="verify(firstName)" type="text" class="form-control" id="firstName" name="firstName" value="" required>
+              <div class="alert alert-warning" role="alert" *ngIf="firstName.touched && firstName.errors?.['required']">
+                <p>First Name is a <strong>required</strong> field</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="lastName" class="form-label">Last name</label>
+              <input ngModel type="text" class="form-control" id="lastName" name="lastName" value="" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="validationCustomUsername" class="form-label">Username</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="inputGroupPrepend">@</span>
+              <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+              <div class="invalid-feedback">
+                Please choose a username.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="validationCustom03" class="form-label">City</label>
+            <input type="text" class="form-control" id="validationCustom03" required>
+            <div class="invalid-feedback">
+              Please provide a valid city.
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label for="validationCustom04" class="form-label">State</label>
+            <select class="form-select" id="validationCustom04" required>
+              <option selected disabled value="">Choose...</option>
+              <option>...</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid state.
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label for="validationCustom05" class="form-label">Zip</label>
+            <input type="text" class="form-control" id="validationCustom05" required>
+            <div class="invalid-feedback">
+              Please provide a valid zip.
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input ngModel class="form-check-input" type="checkbox" name="acceptedTerms" value="" id="invalidCheck" required>
+              <label class="form-check-label" for="invalidCheck">
+                Agree to terms and conditions
+              </label>
+              <div class="invalid-feedback">
+                You must agree before submitting.
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group">
+              <label for="city"></label>
+              <select ngModel class="form-control" name="city" id="city">
+                <option value="1">Sargodha</option>
+                <option value="2">Lahore</option>
+                <option value="3">Karachi</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input ngModel class="form-check-input" type="radio" name="gender" value="1" id="gender1">
+              <label class="form-check-label" for="gender1">
+                Male
+              </label>
+            </div>
+            <div class="form-check">
+              <input ngModel class="form-check-input" type="radio" name="gender" value="2" id="gender2">
+              <label class="form-check-label" for="gender2">
+                Female
+              </label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" [disabled]="!registrationForm.valid" type="submit">Submit form</button>
+          </div>
+          <div>
+            <p>{{registrationForm.value | json}}</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

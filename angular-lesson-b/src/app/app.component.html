@@ -1,63 +1,66 @@
-<div class="container">
-    <!--  This custom accordion is an example of a reusable component and abstraction  -->
-    <app-custom-accordian>
-      <div id='body-text'>
-        <h1>Example</h1>
-        <p>lorem epsu ...... </p>
-      </div>
-    </app-custom-accordian>
+<div class="container h-100">
+  <!-- Component for depicting the use of template forms -->
+<!--  <app-signup></app-signup>-->
+  <app-pizza-order-form></app-pizza-order-form>
+<!--    &lt;!&ndash;  This custom accordion is an example of a reusable component and abstraction  &ndash;&gt;-->
+<!--    <app-custom-accordian>-->
+<!--      <div id='body-text'>-->
+<!--        <h1>Example</h1>-->
+<!--        <p>lorem epsu ...... </p>-->
+<!--      </div>-->
+<!--    </app-custom-accordian>-->
 
-  <div class="row py-3">
-    <div class="d-grid gap-2 col-6 mx-auto">
-      <button
-        type="button"
-        name="reload"
-        id="reload"
-        class="btn btn-outline-primary btn-sm btn-block"
-        (click)="reloadProducts()"
-      >
-        Reload Products
-      </button>
-    </div>
-  </div>
-  <div class="card-group row g-4">
-    <!--      One way to apply *ngIf directive -->
-    <!--      <div *ngIf="products.length > 0">True</div>-->
-    <!--      <div *ngIf="products.length == 0">False</div>-->
+<!--  <div class="row py-3">-->
+<!--    <div class="d-grid gap-2 col-6 mx-auto">-->
+<!--      <button-->
+<!--        type="button"-->
+<!--        name="reload"-->
+<!--        id="reload"-->
+<!--        class="btn btn-outline-primary btn-sm btn-block"-->
+<!--        (click)="reloadProducts()"-->
+<!--      >-->
+<!--        Reload Products-->
+<!--      </button>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="card-group row g-4">-->
+<!--    &lt;!&ndash;      One way to apply *ngIf directive &ndash;&gt;-->
+<!--    &lt;!&ndash;      <div *ngIf="products.length > 0">True</div>&ndash;&gt;-->
+<!--    &lt;!&ndash;      <div *ngIf="products.length == 0">False</div>&ndash;&gt;-->
 
-    <!--
-      Below is a more better way to apply the *ngIf directive
-      It requires the use of ng-container and ng-template along with template variable (eg. #thenBlock)
-         -->
-    <ng-container *ngIf="products.length > 0; then prodAvail else prodNotAvail"></ng-container>
-    <ng-template #prodAvail>
-      <app-product
-        class="col-lg-3 col-md-6 col-sm-12"
+<!--    &lt;!&ndash;-->
+<!--      Below is a more better way to apply the *ngIf directive-->
+<!--      It requires the use of ng-container and ng-template along with template variable (eg. #thenBlock)-->
+<!--         &ndash;&gt;-->
+<!--    <ng-container *ngIf="products.length > 0; then prodAvail else prodNotAvail"></ng-container>-->
+<!--    <ng-template #prodAvail>-->
+<!--      <app-product-->
+<!--        class="col-lg-3 col-md-6 col-sm-12"-->
 
-        [pID]="product.id"
-        [imgSrc]="product.image"
-        [titleText]="product.title"
-        [price]="product.price"
-        [isFavorite]=false
-        [rate]="product.rating.rate"
-        [vCount]="product.rating.count"
-        [bidValue]=0
+<!--        [pID]="product.id"-->
+<!--        [imgSrc]="product.image"-->
+<!--        [titleText]="product.title"-->
+<!--        [price]="product.price"-->
+<!--        [isFavorite]=false-->
+<!--        [rate]="product.rating.rate"-->
+<!--        [vCount]="product.rating.count"-->
+<!--        [bidValue]=0-->
 
-        (isWished)="wishedFor($event)"
+<!--        (isWished)="wishedFor($event)"-->
 
-        *ngFor="let product of products; trackBy: trackProduct"
-      ></app-product>
-      <!--
-        *ngFor="let product of products"
-        Normally, we use ngFor directive like this.
-        You can see that trackBy option of ngFor directive was used to accommodate for change detection mechanism of angular.
-        -->
-    </ng-template>
-    <ng-template #prodNotAvail>
-      <div class="alert alert-info" role="alert">
-        <strong>No Products are currently available. </strong>
-      </div>
-    </ng-template>
-  </div>
+<!--        *ngFor="let product of products; trackBy: trackProduct"-->
+<!--      ></app-product>-->
+<!--      &lt;!&ndash;-->
+<!--        *ngFor="let product of products"-->
+<!--        Normally, we use ngFor directive like this.-->
+<!--        You can see that trackBy option of ngFor directive was used to accommodate for change detection mechanism of angular.-->
+<!--        &ndash;&gt;-->
+<!--    </ng-template>-->
+<!--    <ng-template #prodNotAvail>-->
+<!--      <div class="alert alert-info" role="alert">-->
+<!--        <strong>No Products are currently available. </strong>-->
+<!--      </div>-->
+<!--    </ng-template>-->
+<!--  </div>-->
 
 </div>
