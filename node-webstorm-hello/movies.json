@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "60e7746357090683716baec2"
+  },
+  "genre": [
+    "sci-fi",
+    "thriller"
+  ],
+  "name": "Lord of the Rings",
+  "year": 2003,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60e7753157090683716baec4"
+  },
+  "genre": [
+    "magic",
+    "fantasy",
+    "thriller"
+  ],
+  "name": "Harry Potter and the Deathly Hallows Part 1",
+  "year": 2013,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60e7755957090683716baec6"
+  },
+  "genre": [
+    "magic",
+    "fantasy",
+    "thriller"
+  ],
+  "name": "Harry Potter and the Deathly Hallows Part 2",
+  "year": 2015,
+  "__v": 0
+}]
